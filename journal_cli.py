@@ -2,8 +2,10 @@ import json
 import os
 from datetime import datetime
 
+
 def clear_console():
     os.system('cls' if os.name == 'nt' else 'clear')
+
 
 # Initialize JSON file if it doesn't exist
 if not os.path.exists("journal.json"):
@@ -11,6 +13,8 @@ if not os.path.exists("journal.json"):
         json.dump({}, f)
 
 # Function to add a journal entry
+
+
 def add_entry():
     clear_console()
 
@@ -35,6 +39,8 @@ def add_entry():
     print("\nEntry added successfully! 😊")
 
 # Function to view entries
+
+
 def view_entries():
     clear_console()
 
@@ -43,8 +49,10 @@ def view_entries():
 
     print("---- Journal Entries ----\n")
     for date, entry in entries.items():
-        print(f"{date}: {entry['text']} \n(Mood: {entry['mood']}, Tags: {entry['tags']})")
+        print(
+            f"{date}: {entry['text']} \n(Mood: {entry['mood']}, Tags: {entry['tags']})")
         print("-------------------------")
+
 
 if __name__ == "__main__":
     while True:
